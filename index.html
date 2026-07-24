@@ -1,42 +1,286 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOLLD</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    <title>HOLLD | Feel The Steel</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome per icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        steel: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
         }
-        body {
-            background-color: #ffffff;
-            min-height: 100vh;
-            width: 100%;
-        }
-        .header-logo {
-            width: 100%;
-            display: block;
-        }
-        .header-logo img, .second-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: contain;
-        }
-        .second-image {
-            width: 100%;
-            display: block;
-        }
-    </style>
+    </script>
 </head>
-<body>
-    <header class="header-logo">
-        <img src="holld_logo.png" alt="HOLLD Logo" onerror="this.onerror=null; this.src='https://placehold.co/1200x300/ffffff/000000?text=HOLLD';" />
+<body class="bg-white text-slate-900 font-sans antialiased selection:bg-slate-900 selection:text-white min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER / NAVIGATION BAR -->
+    <header class="w-full bg-white border-b border-slate-100 py-5 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo HOLLD (in alto a sinistra) -->
+            <a href="#" class="flex items-center gap-3">
+                <img src="holld_logo.png" alt="HOLLD Logo" class="h-9 w-auto object-contain" onerror="this.onerror=null; this.src='https://placehold.co/220x60/000000/ffffff?text=HOLLD';" />
+            </a>
+
+            <!-- Link Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-black transition-colors px-4 py-2 rounded-full border border-slate-200 hover:border-slate-400">
+                <i class="fa-brands fa-instagram text-base"></i>
+                <span>Instagram</span>
+            </a>
+        </div>
     </header>
-    <main class="second-image">
-        <img src="holld_info.jpg" alt="HOLLD Immagine 2" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/ffffff/333333?text=Seconda+Immagine';" />
-    </main>
+
+    <!-- HERO SECTION -->
+    <section class="py-12 md:py-20 px-6 md:px-12 bg-white">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Nome e Motto -->
+            <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+                <div class="inline-block px-3.5 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-extrabold tracking-widest uppercase">
+                    Climbing Precision Tools
+                </div>
+                
+                <h1 class="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-slate-950 uppercase leading-none">
+                    HOLLD
+                </h1>
+                
+                <p class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider text-slate-800 uppercase">
+                    FEEL THE STEEL
+                </p>
+
+                <p class="text-slate-600 text-base md:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed pt-2">
+                    High-precision stainless steel portable hangboard. Designed for climbing, warm-up, and advanced training.
+                </p>
+            </div>
+
+            <!-- Immagine / Render Entrambe le Versioni -->
+            <div class="lg:col-span-6">
+                <div class="rounded-3xl overflow-hidden bg-slate-50 border border-slate-200/80 p-2 shadow-sm">
+                    <img src="image_6.jpg" alt="HOLLD Both Versions Render" class="w-full h-auto object-cover rounded-2xl" onerror="this.onerror=null; this.src='https://placehold.co/800x550/f1f5f9/0f172a?text=Render+Both+Versions';" />
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CARATTERISTICHE COMUNI -->
+    <section class="py-16 md:py-24 px-6 md:px-12 bg-slate-50/50 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-xs font-bold text-slate-400 uppercase tracking-widest">Engineering & Quality</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Shared Features</h3>
+                <p class="text-slate-500 text-sm">Excellence standards shared across both HOLLD models.</p>
+            </div>
+
+            <!-- Griglia 9 punti -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                
+                <!-- 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-900 shrink-0 font-bold">
+                        <i class="fa-solid fa-hand"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Super Skin-Friendly</h4>
+                        <p class="text-slate-500 text-xs mt-1">Gentle finish on the skin for extended sessions without abrasions.</p>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-900 shrink-0 font-bold">
+                        <i class="fa-solid fa-grip"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">High Friction</h4>
+                        <p class="text-slate-500 text-xs mt-1">Optimal grip engineered for maximum friction and hold.</p>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-900 shrink-0 font-bold">
+                        <i class="fa-solid fa-shield"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Unmatched Durability</h4>
+                        <p class="text-slate-500 text-xs mt-1">Built to last and withstand heavy loads.</p>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-900 shrink-0 font-bold">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Water Washable</h4>
+                        <p class="text-slate-500 text-xs mt-1">Easily washable with water to remove excess chalk.</p>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-900 shrink-0 font-bold">
+                        <i class="fa-solid fa-cube"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Stainless Steel</h4>
+                        <p class="text-slate-500 text-xs mt-1">Crafted from pure, ultra-durable stainless steel.</p>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-900 shrink-0 font-bold">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Laser-Cut & CNC-Bent</h4>
+                        <p class="text-slate-500 text-xs mt-1">Ultra-high precision laser cutting and CNC machine bending.</p>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-900 shrink-0 font-bold">
+                        <i class="fa-solid fa-ruler-combined"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Benchmark Precision</h4>
+                        <p class="text-slate-500 text-xs mt-1">Millimetric tolerances for a consistent grip feeling.</p>
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-900 shrink-0 font-bold">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Unique Design</h4>
+                        <p class="text-slate-500 text-xs mt-1">Distinctive industrial design, functional in every detail.</p>
+                    </div>
+                </div>
+
+                <!-- 9 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-900 shrink-0 font-bold">
+                        <i class="fa-solid fa-hand-dots"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Open-Side Geometry</h4>
+                        <p class="text-slate-500 text-xs mt-1">Open-side geometry prevents uncomfortable finger jamming.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PRODOTTI / MODELLI A CONFRONTO -->
+    <section class="py-20 md:py-28 px-6 md:px-12 bg-white">
+        <div class="max-w-7xl mx-auto space-y-16">
+            
+            <div class="text-center max-w-2xl mx-auto space-y-3">
+                <h2 class="text-xs font-bold text-slate-400 uppercase tracking-widest">Product Line</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Choose Your Version</h3>
+            </div>
+
+            <!-- Griglia Visuale Modelli -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- MODEL 1: The Lil' 1 -->
+                <div class="border border-slate-200 rounded-3xl p-8 bg-white flex flex-col justify-between shadow-xs">
+                    <div>
+                        <div class="aspect-4/3 rounded-2xl bg-slate-50 border border-slate-100 overflow-hidden mb-8">
+                            <img src="piccola.jpg" alt="HOLLD The Lil 1" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f8fafc/0f172a?text=The+Lil+1';" />
+                        </div>
+                        
+                        <div class="mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Model 01</span>
+                            <h4 class="text-3xl font-extrabold text-slate-900 mt-1">The Lil' 1</h4>
+                            <p class="text-slate-500 font-medium text-sm mt-1">Light and Compact — Best for: <strong class="text-slate-800">Warm-up</strong></p>
+                        </div>
+
+                        <ul class="space-y-2.5 my-6 text-sm text-slate-700 divide-y divide-slate-100 pt-2">
+                            <li class="flex justify-between py-1.5"><span class="text-slate-400">Edge Depth</span> <span class="font-semibold">15 mm</span></li>
+                            <li class="flex justify-between py-1.5"><span class="text-slate-400">Steel Thickness</span> <span class="font-semibold">2 mm stainless steel</span></li>
+                            <li class="flex justify-between py-1.5"><span class="text-slate-400">Edge Radius</span> <span class="font-semibold">4 mm</span></li>
+                            <li class="flex justify-between py-1.5"><span class="text-slate-400">Weight</span> <span class="font-semibold">100 grams</span></li>
+                            <li class="flex justify-between py-1.5"><span class="text-slate-400">Included</span> <span class="font-semibold">Stainless steel carabiner</span></li>
+                            <li class="flex justify-between py-1.5"><span class="text-slate-400">Packaging</span> <span class="font-semibold">Custom fabric pouch</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- MODEL 2: The OG -->
+                <div class="border border-slate-900 rounded-3xl p-8 bg-slate-950 text-white flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="aspect-4/3 rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden mb-8">
+                            <img src="grande.jpg" alt="HOLLD The OG" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/800x600/0f172a/ffffff?text=The+OG';" />
+                        </div>
+
+                        <div class="mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Model 02</span>
+                            <h4 class="text-3xl font-extrabold text-white mt-1">The OG</h4>
+                            <p class="text-slate-400 font-medium text-sm mt-1">The Original — Best for: <strong class="text-white">Training</strong></p>
+                        </div>
+
+                        <ul class="space-y-2.5 my-6 text-sm text-slate-300 divide-y divide-slate-800 pt-2">
+                            <li class="flex justify-between py-1.5"><span class="text-slate-400">Edge Depth</span> <span class="font-semibold text-white">20 mm</span></li>
+                            <li class="flex justify-between py-1.5"><span class="text-slate-400">Steel Thickness</span> <span class="font-semibold text-white">3 mm stainless steel</span></li>
+                            <li class="flex justify-between py-1.5"><span class="text-slate-400">Edge Radius</span> <span class="font-semibold text-white">6 mm</span></li>
+                            <li class="flex justify-between py-1.5"><span class="text-slate-400">Weight</span> <span class="font-semibold text-white">250 grams</span></li>
+                            <li class="flex justify-between py-1.5"><span class="text-slate-400">Included</span> <span class="font-semibold text-white">Stainless steel swivel</span></li>
+                            <li class="flex justify-between py-1.5"><span class="text-slate-400">Packaging</span> <span class="font-semibold text-white">Custom cardboard box</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER CON LINK INSTAGRAM -->
+    <footer class="py-12 px-6 border-t border-slate-100 bg-white">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-sm text-slate-500">
+            <div class="flex items-center gap-3">
+                <img src="holld_logo.png" alt="HOLLD Logo" class="h-6 w-auto object-contain grayscale opacity-60" onerror="this.onerror=null; this.src='https://placehold.co/120x40/000000/ffffff?text=HOLLD';" />
+                <span>&copy; HOLLD. Feel The Steel.</span>
+            </div>
+            
+            <div>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-slate-700 hover:text-black font-medium transition-colors">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                    <span>Follow us on Instagram</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
