@@ -5,12 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOLLD</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #000; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-        img { width: 100vw; height: auto; display: block; object-fit: contain; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #ffffff;
+            min-height: 100vh;
+            width: 100%;
+        }
+        .header-logo {
+            width: 100%;
+            display: block;
+        }
+        .header-logo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body>
-    <img src="image_3.jpg" alt="HOLLD" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/000000/ffffff?text=HOLLD';" />
+    <header class="header-logo">
+        <img src="holld_logo.png" alt="HOLLD Logo" onerror="this.onerror=null; this.src='https://placehold.co/1200x300/ffffff/000000?text=HOLLD';" />
+    </header>
 </body>
 </html>
