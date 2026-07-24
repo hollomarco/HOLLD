@@ -6,7 +6,7 @@
     <title>HOLLD | Feel The Steel</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome per icone -->
+    <!-- FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -22,6 +22,11 @@
                             50: '#f8fafc',
                             100: '#f1f5f9',
                             200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
                             800: '#1e293b',
                             900: '#0f172a',
                             950: '#020617',
@@ -31,32 +36,52 @@
             }
         }
     </script>
+    <style>
+        .steel-shimmer {
+            background: linear-gradient(110deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 4s infinite linear;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
 </head>
 <body class="bg-white text-slate-900 font-sans antialiased selection:bg-slate-900 selection:text-white min-h-screen flex flex-col justify-between">
 
-    <!-- HEADER / NAVIGATION BAR -->
-    <header class="w-full bg-white border-b border-slate-100 py-5 px-6 md:px-12">
+    <header class="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-md border-b border-slate-100 py-4 px-6 md:px-12 transition-all">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <!-- Logo HOLLD (in alto a sinistra) -->
-            <a href="#" class="flex items-center gap-3">
-                <img src="holld_logo.png" alt="HOLLD Logo" class="h-9 w-auto object-contain" onerror="this.onerror=null; this.src='https://placehold.co/220x60/000000/ffffff?text=HOLLD';" />
+            <!-- Logo HOLLD -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="holld_logo.png" alt="HOLLD Logo" class="h-9 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/220x60/000000/ffffff?text=HOLLD';" />
             </a>
 
-            <!-- Link Instagram -->
-            <a href="https://www.instagram.com/_holld?igsh=MTVsdXl6N2ZqamNqcQ==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-black transition-colors px-4 py-2 rounded-full border border-slate-200 hover:border-slate-400">
-                <i class="fa-brands fa-instagram text-base"></i>
-                <span>Instagram</span>
-            </a>
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                <a href="#features" class="hover:text-slate-950 transition-colors">Features</a>
+                <a href="#models" class="hover:text-slate-950 transition-colors">Models</a>
+                <a href="#material-comparison" class="hover:text-slate-950 transition-colors">Why Steel</a>
+                <a href="#faq" class="hover:text-slate-950 transition-colors">FAQ</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-3">
+                <a href="https://www.instagram.com/_holld?igsh=MTVsdXl6N2ZqamNqcQ==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-black transition-colors px-4 py-2 rounded-full border border-slate-200 hover:border-slate-400">
+                    <i class="fa-brands fa-instagram text-base"></i>
+                    <span class="hidden sm:inline">Instagram</span>
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="py-12 md:py-20 px-6 md:px-12 bg-white">
+    <section class="py-12 md:py-20 px-6 md:px-12 bg-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <!-- Nome e Motto -->
+            <!-- Headline and Branding -->
             <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
-                <div class="inline-block px-3.5 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-extrabold tracking-widest uppercase">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-extrabold tracking-widest uppercase">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                     STAINLESS STEEL PORTABLE HANGBOARD
                 </div>
                 
@@ -69,22 +94,29 @@
                 </p>
 
                 <p class="text-slate-600 text-base md:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed pt-2">
-                    High-precision stainless steel portable hangboard. Designed for training, warm-up, and rehab.
+                    High-precision stainless steel portable hangboards engineered for climbers. Unlimited lifespan, unmatched precision, and flawless skin feel.
                 </p>
+
+                <!-- Hero Action CTAs -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#models" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-slate-950 hover:bg-slate-800 text-white font-bold text-sm transition-all shadow-lg hover:shadow-xl">
+                        <span>Explore Models</span>
+                        <i class="fa-solid fa-arrow-down text-xs"></i>
+                    </a>
+                </div>
             </div>
 
-            <!-- Immagine / Render Entrambe le Versioni -->
+            <!-- Hero Image / Render Both Models -->
             <div class="lg:col-span-6">
-                <div class="rounded-3xl overflow-hidden bg-slate-50 border border-slate-200/80 p-2 shadow-sm">
-                    <img src="image_6.jpg" alt="HOLLD Both Versions Render" class="w-full h-auto object-contain rounded-2xl" onerror="this.onerror=null; this.src='https://placehold.co/800x800/f1f5f9/0f172a?text=Render+Both+Versions';" />
+                <div class="relative rounded-3xl overflow-hidden bg-slate-50 border border-slate-200/80 p-3 shadow-md group">
+                    <img src="image_6.jpg" alt="HOLLD Both Versions Render" class="w-full h-auto object-contain rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]" onerror="this.onerror=null; this.src='https://placehold.co/800x800/f1f5f9/0f172a?text=Render+Both+Versions';" />
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- CARATTERISTICHE COMUNI -->
-    <section class="py-16 md:py-24 px-6 md:px-12 bg-slate-50/50 border-y border-slate-100">
+    <section id="features" class="py-16 md:py-24 px-6 md:px-12 bg-slate-50/50 border-y border-slate-100">
         <div class="max-w-7xl mx-auto">
             
             <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
@@ -93,105 +125,105 @@
                 <p class="text-slate-500 text-sm">Excellence standards shared across both HOLLD models.</p>
             </div>
 
-            <!-- Griglia 9 punti -->
+            <!-- 9 Key Features Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 
                 <!-- 1 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex items-start gap-4">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow flex items-start gap-4">
                     <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-900 shrink-0 font-bold">
                         <i class="fa-solid fa-hand"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-slate-900 text-base">Super Skin-Friendly</h4>
-                        <p class="text-slate-500 text-xs mt-1">The smooth rounded surface is super gentle on the skin for extended sessions.</p>
+                        <p class="text-slate-500 text-xs mt-1">The smooth rounded surface is super gentle on skin for extended high-volume sessions.</p>
                     </div>
                 </div>
 
                 <!-- 2 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex items-start gap-4">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow flex items-start gap-4">
                     <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-900 shrink-0 font-bold">
                         <i class="fa-solid fa-grip"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-slate-900 text-base">High Friction</h4>
-                        <p class="text-slate-500 text-xs mt-1">The Scotch-Brite surface finish guarantees optimal grip.</p>
+                        <p class="text-slate-500 text-xs mt-1">The custom Scotch-Brite surface finish guarantees optimal grip with minimal chalk.</p>
                     </div>
                 </div>
 
                 <!-- 3 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex items-start gap-4">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow flex items-start gap-4">
                     <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-900 shrink-0 font-bold">
                         <i class="fa-solid fa-shield"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-slate-900 text-base">Unmatched Durability</h4>
-                        <p class="text-slate-500 text-xs mt-1">Built to last a lifetime and withstand heavy loads.</p>
+                        <p class="text-slate-500 text-xs mt-1">Built to last a lifetime and withstand extreme outdoor weather and heavy loads.</p>
                     </div>
                 </div>
 
                 <!-- 4 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex items-start gap-4">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow flex items-start gap-4">
                     <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-900 shrink-0 font-bold">
                         <i class="fa-solid fa-droplet"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-slate-900 text-base">Water Washable</h4>
-                        <p class="text-slate-500 text-xs mt-1">Easily washable with water to remove excess chalk.</p>
+                        <p class="text-slate-500 text-xs mt-1">Easily washable with simple water to completely restore original friction instantaneously.</p>
                     </div>
                 </div>
 
                 <!-- 5 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex items-start gap-4">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow flex items-start gap-4">
                     <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-900 shrink-0 font-bold">
                         <i class="fa-solid fa-cube"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-slate-900 text-base">Stainless Steel</h4>
-                        <p class="text-slate-500 text-xs mt-1">Crafted from AISI 304 ultra-durable stainless steel.</p>
+                        <p class="text-slate-500 text-xs mt-1">Crafted exclusively from premium AISI 304 rust-proof, ultra-durable stainless steel.</p>
                     </div>
                 </div>
 
                 <!-- 6 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex items-start gap-4">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow flex items-start gap-4">
                     <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-900 shrink-0 font-bold">
                         <i class="fa-solid fa-scissors"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-slate-900 text-base">Laser-Cut & CNC-Bent</h4>
-                        <p class="text-slate-500 text-xs mt-1">Ultra-high precision laser cutting and CNC machine bending.</p>
+                        <p class="text-slate-500 text-xs mt-1">Ultra-high precision industrial laser cutting combined with automated CNC machine bending.</p>
                     </div>
                 </div>
 
                 <!-- 7 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex items-start gap-4">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow flex items-start gap-4">
                     <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-900 shrink-0 font-bold">
                         <i class="fa-solid fa-ruler-combined"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-slate-900 text-base">Benchmark Precision</h4>
-                        <p class="text-slate-500 text-xs mt-1">Tight tolerances, ensuring excellent dimensional consistency across all units.</p>
+                        <p class="text-slate-500 text-xs mt-1">Tight manufacturing tolerances ensuring perfect dimensional consistency across all units.</p>
                     </div>
                 </div>
 
                 <!-- 8 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex items-start gap-4">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow flex items-start gap-4">
                     <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-900 shrink-0 font-bold">
                         <i class="fa-solid fa-compass-drafting"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-slate-900 text-base">Unique Design</h4>
-                        <p class="text-slate-500 text-xs mt-1">Distinctive industrial design, functional in every detail.</p>
+                        <p class="text-slate-500 text-xs mt-1">Distinctive minimalist industrial aesthetic, functional down to every precise radius.</p>
                     </div>
                 </div>
 
                 <!-- 9 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex items-start gap-4">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow flex items-start gap-4">
                     <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-900 shrink-0 font-bold">
                         <i class="fa-solid fa-hand-dots"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-slate-900 text-base">Open-Side Geometry</h4>
-                        <p class="text-slate-500 text-xs mt-1">The shape prevents passive grip by index or pinky finger jamming.</p>
+                        <p class="text-slate-500 text-xs mt-1">An open design that eliminates passive friction from finger jamming during hangs.</p>
                     </div>
                 </div>
 
@@ -200,36 +232,71 @@
         </div>
     </section>
 
-    <!-- PRODOTTI / MODELLI A CONFRONTO -->
-    <section class="py-20 md:py-28 px-6 md:px-12 bg-white">
+    <section id="models" class="py-20 md:py-28 px-6 md:px-12 bg-white">
         <div class="max-w-7xl mx-auto space-y-16">
             
             <div class="text-center max-w-2xl mx-auto space-y-3">
                 <h2 class="text-xs font-bold text-slate-400 uppercase tracking-widest">Product Line</h2>
                 <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Choose Your Version</h3>
+                <p class="text-slate-500 text-sm">Engineered for lightweight warm-up portability or intense strength training.</p>
             </div>
 
-            <!-- Griglia Visuale Modelli -->
+            <!-- Model Cards Grid -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 
                 <!-- MODEL 1: The Lil' 1 -->
-                <div class="border border-slate-200 rounded-3xl p-8 bg-white flex flex-col justify-between shadow-xs">
+                <div class="border border-slate-200 rounded-3xl p-8 bg-white flex flex-col justify-between shadow-xs hover:shadow-lg transition-all">
                     <div>
-                        <div class="aspect-square rounded-2xl bg-slate-50 border border-slate-100 overflow-hidden mb-8 flex items-center justify-center p-2">
-                            <img src="piccola_render_2.jpg" alt="HOLLD The Lil 1" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/800x800/f8fafc/0f172a?text=The+Lil+1';" />
+                        <div class="relative aspect-square rounded-2xl bg-slate-50 border border-slate-100 overflow-hidden mb-8 group">
+                            <!-- Carousel Track (4 Render Tacca Piccola) -->
+                            <div id="carousel-lil1-track" class="flex w-full h-full transition-transform duration-300 ease-in-out">
+                                <div class="w-full h-full shrink-0 flex items-center justify-center p-4 relative">
+                                    <img src="piccola_render_1.jpg" alt="HOLLD The Lil 1 - Render 1" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/800x800/f8fafc/0f172a?text=The+Lil+1+-+Render+1';" />
+                                </div>
+                                <div class="w-full h-full shrink-0 flex items-center justify-center p-4 relative">
+                                    <img src="piccola_render_2.jpg" alt="HOLLD The Lil 1 - Render 2" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/800x800/f8fafc/0f172a?text=The+Lil+1+-+Render+2';" />
+                                </div>
+                                <div class="w-full h-full shrink-0 flex items-center justify-center p-4 relative">
+                                    <img src="piccola_render_3.jpg" alt="HOLLD The Lil 1 - Render 3" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/800x800/f8fafc/0f172a?text=The+Lil+1+-+Render+3';" />
+                                </div>
+                                <div class="w-full h-full shrink-0 flex items-center justify-center p-4 relative">
+                                    <img src="piccola_render_4.jpg" alt="HOLLD The Lil 1 - Render 4" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/800x800/f8fafc/0f172a?text=The+Lil+1+-+Render+4';" />
+                                </div>
+                            </div>
+
+                            <!-- Badge -->
+                            <span class="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-xs border border-slate-200 text-slate-800 text-xs font-black uppercase px-3 py-1 rounded-full shadow-xs pointer-events-none">
+                                Compact Warm-Up
+                            </span>
+
+                            <!-- Navigation Arrows -->
+                            <button onclick="moveCarousel('lil1', -1)" aria-label="Foto precedente" class="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-slate-800 shadow-md flex items-center justify-center text-xs transition-all hover:scale-105 active:scale-95">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <button onclick="moveCarousel('lil1', 1)" aria-label="Foto successiva" class="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-slate-800 shadow-md flex items-center justify-center text-xs transition-all hover:scale-105 active:scale-95">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+                            <!-- Indicators (4 pallini) -->
+                            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex gap-2 bg-slate-900/10 backdrop-blur-md px-2.5 py-1.5 rounded-full">
+                                <button onclick="setCarouselSlide('lil1', 0)" id="lil1-dot-0" aria-label="Foto 1" class="w-2 h-2 rounded-full bg-slate-900 transition-all"></button>
+                                <button onclick="setCarouselSlide('lil1', 1)" id="lil1-dot-1" aria-label="Foto 2" class="w-2 h-2 rounded-full bg-slate-900/30 transition-all"></button>
+                                <button onclick="setCarouselSlide('lil1', 2)" id="lil1-dot-2" aria-label="Foto 3" class="w-2 h-2 rounded-full bg-slate-900/30 transition-all"></button>
+                                <button onclick="setCarouselSlide('lil1', 3)" id="lil1-dot-3" aria-label="Foto 4" class="w-2 h-2 rounded-full bg-slate-900/30 transition-all"></button>
+                            </div>
                         </div>
                         
                         <div class="mb-4">
                             <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Model 01</span>
                             <h4 class="text-3xl font-extrabold text-slate-900 mt-1">The Lil' 1</h4>
-                            <p class="text-slate-500 font-medium text-sm mt-1">Light and Compact — Best for: <strong class="text-slate-800">Warm-up</strong></p>
+                            <p class="text-slate-500 font-medium text-sm mt-1">Ultra-Light & Compact — Best for: <strong class="text-slate-800">Warm-up & Crag Mobility</strong></p>
                         </div>
 
                         <ul class="space-y-2.5 my-6 text-sm text-slate-700 divide-y divide-slate-100 pt-2">
                             <li class="flex justify-between py-1.5"><span class="text-slate-400">Edge Depth</span> <span class="font-semibold">15 mm</span></li>
                             <li class="flex justify-between py-1.5"><span class="text-slate-400">Steel Thickness</span> <span class="font-semibold">2 mm stainless steel</span></li>
                             <li class="flex justify-between py-1.5"><span class="text-slate-400">Edge Radius</span> <span class="font-semibold">4 mm</span></li>
-                            <li class="flex justify-between py-1.5"><span class="text-slate-400">Weight</span> <span class="font-semibold">100 grams</span></li>
+                            <li class="flex justify-between py-1.5"><span class="text-slate-400">Weight</span> <span class="font-semibold text-emerald-600 font-bold">100 grams</span></li>
                             <li class="flex justify-between py-1.5"><span class="text-slate-400">Included</span> <span class="font-semibold">Stainless steel carabiner</span></li>
                             <li class="flex justify-between py-1.5"><span class="text-slate-400">Packaging</span> <span class="font-semibold">Custom fabric pouch</span></li>
                         </ul>
@@ -237,16 +304,44 @@
                 </div>
 
                 <!-- MODEL 2: The OG -->
-                <div class="border border-slate-900 rounded-3xl p-8 bg-slate-950 text-white flex flex-col justify-between shadow-xl">
-                    <div>
-                        <div class="aspect-square rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden mb-8 flex items-center justify-center p-2">
-                            <img src="grande_render_2.jpg" alt="HOLLD The OG" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/800x800/0f172a/ffffff?text=The+OG';" />
+                <div class="border border-slate-900 rounded-3xl p-8 bg-slate-950 text-white flex flex-col justify-between shadow-xl relative overflow-hidden">
+                    <div class="steel-shimmer absolute inset-0 pointer-events-none"></div>
+                    <div class="relative z-10">
+                        <div class="relative aspect-square rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden mb-8 group">
+                            <!-- Carousel Track (2 Render Tacca Grande) -->
+                            <div id="carousel-og-track" class="flex w-full h-full transition-transform duration-300 ease-in-out">
+                                <div class="w-full h-full shrink-0 flex items-center justify-center p-4 relative">
+                                    <img src="grande_render_1.jpg" alt="HOLLD The OG - Render 1" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/800x800/0f172a/ffffff?text=The+OG+-+Render+1';" />
+                                </div>
+                                <div class="w-full h-full shrink-0 flex items-center justify-center p-4 relative">
+                                    <img src="grande_render_2.jpg" alt="HOLLD The OG - Render 2" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/800x800/0f172a/ffffff?text=The+OG+-+Render+2';" />
+                                </div>
+                            </div>
+
+                            <!-- Badge -->
+                            <span class="absolute top-4 left-4 z-10 bg-slate-800/90 backdrop-blur-xs border border-slate-700 text-white text-xs font-black uppercase px-3 py-1 rounded-full shadow-xs pointer-events-none">
+                                Pro Heavy Training
+                            </span>
+
+                            <!-- Navigation Arrows -->
+                            <button onclick="moveCarousel('og', -1)" aria-label="Foto precedente" class="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-slate-800/90 hover:bg-slate-700 text-white shadow-md flex items-center justify-center text-xs transition-all hover:scale-105 active:scale-95 border border-slate-700">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <button onclick="moveCarousel('og', 1)" aria-label="Foto successiva" class="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-slate-800/90 hover:bg-slate-700 text-white shadow-md flex items-center justify-center text-xs transition-all hover:scale-105 active:scale-95 border border-slate-700">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+                            <!-- Indicators (2 pallini) -->
+                            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex gap-2 bg-black/40 backdrop-blur-md px-2.5 py-1.5 rounded-full border border-white/10">
+                                <button onclick="setCarouselSlide('og', 0)" id="og-dot-0" aria-label="Foto 1" class="w-2 h-2 rounded-full bg-white transition-all"></button>
+                                <button onclick="setCarouselSlide('og', 1)" id="og-dot-1" aria-label="Foto 2" class="w-2 h-2 rounded-full bg-white/30 transition-all"></button>
+                            </div>
                         </div>
 
                         <div class="mb-4">
                             <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Model 02</span>
                             <h4 class="text-3xl font-extrabold text-white mt-1">The OG</h4>
-                            <p class="text-slate-400 font-medium text-sm mt-1">The Original — Best for: <strong class="text-white">Training</strong></p>
+                            <p class="text-slate-400 font-medium text-sm mt-1">The Original Powerhouse — Best for: <strong class="text-white">Max Strength Training</strong></p>
                         </div>
 
                         <ul class="space-y-2.5 my-6 text-sm text-slate-300 divide-y divide-slate-800 pt-2">
@@ -265,7 +360,269 @@
         </div>
     </section>
 
-    <!-- FOOTER CON LINK INSTAGRAM -->
+    <section id="material-comparison" class="py-16 md:py-24 px-6 md:px-12 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto space-y-12">
+            
+            <div class="text-center max-w-2xl mx-auto space-y-3">
+                <h2 class="text-xs font-bold text-slate-400 uppercase tracking-widest">Why Stainless Steel?</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Steel vs. Traditional Materials</h3>
+                <p class="text-slate-400 text-sm">See how HOLLD stainless steel outperforms traditional wood and polyurethane resin hangboards.</p>
+            </div>
+
+            <!-- Comparison Interactive Matrix -->
+            <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950">
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-slate-900 text-xs uppercase tracking-wider text-slate-400 border-b border-slate-800">
+                        <tr>
+                            <th class="p-4 sm:p-6">Feature / Property</th>
+                            <th class="p-4 sm:p-6 text-emerald-400 font-bold">HOLLD Steel</th>
+                            <th class="p-4 sm:p-6 text-slate-400">Wooden Hangboards</th>
+                            <th class="p-4 sm:p-6 text-slate-400">Resin Hangboards</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800/80 text-slate-300">
+                        <tr>
+                            <td class="p-4 sm:p-6 font-medium text-white">Skin Friendliness</td>
+                            <td class="p-4 sm:p-6 text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check"></i> Exceptional (Smooth)</td>
+                            <td class="p-4 sm:p-6 text-slate-400">Good, but wears down over time</td>
+                            <td class="p-4 sm:p-6 text-slate-400">Abrasive & shreds skin fast</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 sm:p-6 font-medium text-white">Maintenance & Cleaning</td>
+                            <td class="p-4 sm:p-6 text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check"></i> 100% Water Washable</td>
+                            <td class="p-4 sm:p-6 text-slate-400">Damaged by water & moisture</td>
+                            <td class="p-4 sm:p-6 text-slate-400">Pores trap chalk & grease</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 sm:p-6 font-medium text-white">Outdoor Weather Proof</td>
+                            <td class="p-4 sm:p-6 text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check"></i> Indestructible AISI 304</td>
+                            <td class="p-4 sm:p-6 text-slate-400">Warps & rots in rain/humidity</td>
+                            <td class="p-4 sm:p-6 text-slate-400">Degrades under UV light</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 sm:p-6 font-medium text-white">Edge Precision Tolerances</td>
+                            <td class="p-4 sm:p-6 text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check"></i> CNC Laser Exact (&lt;0.1mm)</td>
+                            <td class="p-4 sm:p-6 text-slate-400">Varies with humidity & sanding</td>
+                            <td class="p-4 sm:p-6 text-slate-400">Molding shrinkage distortion</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 sm:p-6 font-medium text-white">Lifespan</td>
+                            <td class="p-4 sm:p-6 text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check"></i> Lifetime Guarantee</td>
+                            <td class="p-4 sm:p-6 text-slate-400">2-5 years average</td>
+                            <td class="p-4 sm:p-6 text-slate-400">Chips and wears smooth</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 md:py-28 px-6 md:px-12 bg-slate-50/50">
+        <div class="max-w-4xl mx-auto space-y-12">
+            
+            <div class="text-center space-y-3">
+                <h2 class="text-xs font-bold text-slate-400 uppercase tracking-widest">Got Questions?</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Frequently Asked Questions</h3>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all">
+                    <button onclick="toggleFaq(1)" class="w-full px-6 py-5 text-left font-bold text-slate-900 flex items-center justify-between gap-4 hover:bg-slate-50">
+                        <span>Is steel slippery when hanging?</span>
+                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-1" class="hidden px-6 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3">
+                        Not at all! HOLLD hangboards feature a specialized Scotch-Brite micro-textured surface finish that provides optimal friction without tearing up skin tips. Combined with standard climbing chalk, it gives consistent grip session after session.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all">
+                    <button onclick="toggleFaq(2)" class="w-full px-6 py-5 text-left font-bold text-slate-900 flex items-center justify-between gap-4 hover:bg-slate-50">
+                        <span>How do I clean chalk and sweat buildup off the hangboard?</span>
+                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-2" class="hidden px-6 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3">
+                        Unlike wooden hangboards that absorb oil and degrade when wet, HOLLD stainless steel can be washed thoroughly under running water with a soft brush and mild soap. It dries instantly back to 100% factory friction.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all">
+                    <button onclick="toggleFaq(3)" class="w-full px-6 py-5 text-left font-bold text-slate-900 flex items-center justify-between gap-4 hover:bg-slate-50">
+                        <span>What is included with each model?</span>
+                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-3" class="hidden px-6 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3">
+                        <strong>The Lil' 1</strong> comes with a compact stainless steel carabiner and a custom fabric carrying pouch.<br>
+                        <strong>The OG</strong> comes equipped with a heavy-duty stainless steel rotational swivel to reduce cord twisting under heavy loads, packaged in a custom box.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all">
+                    <button onclick="toggleFaq(4)" class="w-full px-6 py-5 text-left font-bold text-slate-900 flex items-center justify-between gap-4 hover:bg-slate-50">
+                        <span>Where are HOLLD hangboards made?</span>
+                        <i id="faq-icon-4" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-4" class="hidden px-6 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3">
+                        HOLLD products are precision laser-cut, CNC-bent, and surface-finished in Europe to rigorous quality standards using certified AISI 304 stainless steel.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="inquiry-modal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl border border-slate-100 transform scale-95 transition-transform duration-300" id="modal-box">
+            
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-900 text-xl font-bold p-1">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="space-y-4">
+                <div class="inline-block px-3 py-1 bg-slate-100 text-slate-800 rounded-full text-xs font-bold uppercase tracking-wider" id="modal-badge">
+                    Inquiry
+                </div>
+                <h3 class="text-2xl font-extrabold text-slate-950">Get In Touch / Order HOLLD</h3>
+                <p class="text-slate-500 text-sm">Send us a message or request order details. We will respond via email or Instagram directly.</p>
+
+                <form onsubmit="handleFormSubmit(event)" class="space-y-4 pt-2">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Your Name</label>
+                        <input type="text" required placeholder="Alex Smith" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-slate-900 focus:outline-none text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Email Address</label>
+                        <input type="email" required placeholder="alex@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-slate-900 focus:outline-none text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Select Model Interest</label>
+                        <select id="modal-select-model" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-slate-900 focus:outline-none text-sm bg-white">
+                            <option value="The Lil' 1">The Lil' 1 (15mm / 100g)</option>
+                            <option value="The OG">The OG (20mm / 250g)</option>
+                            <option value="Both Versions">Both Versions / Multi-pack</option>
+                            <option value="General Question">General Inquiry</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Message (Optional)</label>
+                        <textarea rows="3" placeholder="Tell us your shipping location or any questions..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-slate-900 focus:outline-none text-sm"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-xl bg-slate-950 hover:bg-slate-800 text-white font-bold text-sm transition-all shadow-md">
+                        Send Order Inquiry
+                    </button>
+                </form>
+
+                <div id="form-success" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-medium text-center">
+                    <i class="fa-solid fa-circle-check text-base mb-1 block text-emerald-600"></i>
+                    Thank you! Your request has been recorded. You can also reach us on <a href="https://www.instagram.com/_holld?igsh=MTVsdXl6N2ZqamNqcQ==" target="_blank" class="underline font-bold">Instagram @_holld</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Carousel State Management
+        const carouselState = {
+            lil1: 0,
+            og: 0
+        };
+
+        const TOTAL_SLIDES = {
+            lil1: 4,
+            og: 2
+        };
+
+        function moveCarousel(id, direction) {
+            const total = TOTAL_SLIDES[id] || 2;
+            let current = carouselState[id];
+            current = (current + direction + total) % total;
+            setCarouselSlide(id, current);
+        }
+
+        function setCarouselSlide(id, index) {
+            carouselState[id] = index;
+            const track = document.getElementById(`carousel-${id}-track`);
+            if (track) {
+                track.style.transform = `translateX(-${index * 100}%)`;
+            }
+            
+            // Update dots dynamically based on slide count
+            const total = TOTAL_SLIDES[id] || 2;
+            for (let i = 0; i < total; i++) {
+                const dot = document.getElementById(`${id}-dot-${i}`);
+                if (dot) {
+                    if (id === 'lil1') {
+                        dot.className = i === index 
+                            ? "w-2 h-2 rounded-full bg-slate-900 transition-all" 
+                            : "w-2 h-2 rounded-full bg-slate-900/30 transition-all";
+                    } else {
+                        dot.className = i === index 
+                            ? "w-2 h-2 rounded-full bg-white transition-all" 
+                            : "w-2 h-2 rounded-full bg-white/30 transition-all";
+                    }
+                }
+            }
+        }
+
+        // Modal Handlers
+        function openModal(title) {
+            const modal = document.getElementById('inquiry-modal');
+            const modalBox = document.getElementById('modal-box');
+            const badge = document.getElementById('modal-badge');
+            const select = document.getElementById('modal-select-model');
+            
+            badge.innerText = title;
+            if (title.includes("Lil")) select.value = "The Lil' 1";
+            if (title.includes("OG")) select.value = "The OG";
+
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalBox.classList.remove('scale-95');
+                modalBox.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('inquiry-modal');
+            const modalBox = document.getElementById('modal-box');
+            
+            modal.classList.add('opacity-0');
+            modalBox.classList.remove('scale-100');
+            modalBox.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.getElementById('form-success').classList.add('hidden');
+            }, 300);
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            document.getElementById('form-success').classList.remove('hidden');
+        }
+
+        // FAQ Toggle
+        function toggleFaq(id) {
+            const answer = document.getElementById(`faq-answer-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                answer.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+    </script>
+
     <footer class="py-12 px-6 border-t border-slate-100 bg-white">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-sm text-slate-500">
             <div class="flex items-center gap-3">
@@ -273,7 +630,9 @@
                 <span>&copy; HOLLD. Feel The Steel.</span>
             </div>
             
-            <div>
+            <div class="flex items-center gap-6">
+                <a href="#features" class="hover:text-slate-900 transition-colors">Features</a>
+                <a href="#models" class="hover:text-slate-900 transition-colors">Models</a>
                 <a href="https://www.instagram.com/_holld?igsh=MTVsdXl6N2ZqamNqcQ==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-slate-700 hover:text-black font-medium transition-colors">
                     <i class="fa-brands fa-instagram text-lg"></i>
                     <span>Follow us on Instagram</span>
